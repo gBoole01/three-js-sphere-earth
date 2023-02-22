@@ -42,7 +42,7 @@ const atmosphere = new THREE.Mesh(
   })
 )
 
-atmosphere.scale.set(1.1, 1.1, 1.1)
+atmosphere.scale.set(1.4, 1.4, 1.4)
 scene.add(atmosphere)
 
 
@@ -50,6 +50,7 @@ scene.add(atmosphere)
 function animate() {
   requestAnimationFrame(animate)
   renderer.render(scene, camera)
+  sphere.rotation.y += 0.001
 }
 animate()
 
