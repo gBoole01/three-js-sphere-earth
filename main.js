@@ -19,9 +19,13 @@ camera.lookAt(new THREE.Vector3(0, 0, 0))
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(5, 50, 50),
   new THREE.ShaderMaterial({
-    // map: new THREE.TextureLoader().load('images/earth-uv-map.jpg')
     vertexShader,
     fragmentShader,
+    uniforms: {
+      globeTexture: {
+        value: new THREE.TextureLoader().load('images/earth-uv-map.jpg')
+      },
+    }
   })
 )
 scene.add(sphere)
